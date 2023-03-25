@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rookiss_Map_Management_System", "Rookiss_Map_Management_System\Rookiss_Map_Management_System.csproj", "{E8497754-A64A-470C-B146-3CCB4857B1F8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MapLoad", "MapLoad", "{4AB125F5-2FAE-4655-9479-E1F9518EADFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapLoad_v1", "MapLoad\MapLoad_v1\MapLoad_v1.csproj", "{C6DF16E5-6A19-4558-9F48-5EA148F7AF09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.MapData", "00.MapData", "{48A54CEB-78EC-4D30-9856-16C448BF6FC1}"
+	ProjectSection(SolutionItems) = preProject
+		..\MapData\Map_001.txt = ..\MapData\Map_001.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +18,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E8497754-A64A-470C-B146-3CCB4857B1F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8497754-A64A-470C-B146-3CCB4857B1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8497754-A64A-470C-B146-3CCB4857B1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8497754-A64A-470C-B146-3CCB4857B1F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6DF16E5-6A19-4558-9F48-5EA148F7AF09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6DF16E5-6A19-4558-9F48-5EA148F7AF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6DF16E5-6A19-4558-9F48-5EA148F7AF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6DF16E5-6A19-4558-9F48-5EA148F7AF09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C6DF16E5-6A19-4558-9F48-5EA148F7AF09} = {4AB125F5-2FAE-4655-9479-E1F9518EADFF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83705021-E648-4AF8-B226-8188B0A6E758}
