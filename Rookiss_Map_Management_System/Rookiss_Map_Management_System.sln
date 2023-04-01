@@ -5,12 +5,17 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MapLoad", "MapLoad", "{4AB125F5-2FAE-4655-9479-E1F9518EADFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapLoad_v1", "MapLoad\MapLoad_v1\MapLoad_v1.csproj", "{C6DF16E5-6A19-4558-9F48-5EA148F7AF09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapLoad_v1", "MapLoad\MapLoad_v1\MapLoad_v1.csproj", "{C6DF16E5-6A19-4558-9F48-5EA148F7AF09}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.MapData", "00.MapData", "{48A54CEB-78EC-4D30-9856-16C448BF6FC1}"
 	ProjectSection(SolutionItems) = preProject
 		..\MapData\Map_001.txt = ..\MapData\Map_001.txt
+		..\MapData\TestMap_001.txt = ..\MapData\TestMap_001.txt
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FindPathSimulation", "FindPathSimulation", "{DE19DA84-5168-43D1-AA23-B94AB65C6C67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindPathTest_v1", "FindPathSimulation\FindPathTest_v1\FindPathTest_v1.csproj", "{90CC6EE3-714F-4928-8EE5-4DC6C9BA273B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,12 +27,17 @@ Global
 		{C6DF16E5-6A19-4558-9F48-5EA148F7AF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6DF16E5-6A19-4558-9F48-5EA148F7AF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6DF16E5-6A19-4558-9F48-5EA148F7AF09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90CC6EE3-714F-4928-8EE5-4DC6C9BA273B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90CC6EE3-714F-4928-8EE5-4DC6C9BA273B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90CC6EE3-714F-4928-8EE5-4DC6C9BA273B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90CC6EE3-714F-4928-8EE5-4DC6C9BA273B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C6DF16E5-6A19-4558-9F48-5EA148F7AF09} = {4AB125F5-2FAE-4655-9479-E1F9518EADFF}
+		{90CC6EE3-714F-4928-8EE5-4DC6C9BA273B} = {DE19DA84-5168-43D1-AA23-B94AB65C6C67}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83705021-E648-4AF8-B226-8188B0A6E758}
