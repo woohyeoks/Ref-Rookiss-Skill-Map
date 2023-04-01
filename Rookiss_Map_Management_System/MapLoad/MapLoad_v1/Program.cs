@@ -11,6 +11,7 @@ namespace MapLoad_v1
             int mapId = 1;
             GameRoom gameRoom = new GameRoom();
             gameRoom.Init(mapId);
+            gameRoom.TestCollision();
         }
     }
 }

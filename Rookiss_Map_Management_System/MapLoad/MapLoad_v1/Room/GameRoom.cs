@@ -10,10 +10,15 @@ namespace MapLoad_v1.Room
     {
         public Map Map { get; private set; } = new Map();
 
-
         public void Init(int mapId)
         {
             Map.LoadMap(mapId, "../../../../../../MapData");
+        }
+
+
+        public void TestCollision()
+        {
+            Map.TestCollision();
         }
     }
 }
