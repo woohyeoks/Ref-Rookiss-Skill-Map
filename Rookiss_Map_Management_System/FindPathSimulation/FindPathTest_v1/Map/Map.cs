@@ -102,13 +102,25 @@ namespace FindPathTest_v1
             if (gameObject.Room == null || gameObject.Room.Map != this)
                 return false;
 
-            int x = gameObject.Pos.x - MinX;
-            int y = MaxY - gameObject.Pos.y;
+            int x = dest.x - MinX;
+            int y = MaxY - dest.y;
             _objects[y, x] = gameObject;
 
             gameObject.Pos.x = dest.x;
             gameObject.Pos.y = dest.y;
             return true;
+        }
+
+        public bool CanGo(Vector2Int cellPos, bool checkObjects = true)
+        {
+            if (cellPos.x < MinX || cellPos.x > MaxX)
+                return false;
+            if (cellPos.y < MinY || cellPos.y > MaxY)
+                return false;
+            int x = cellPos.x - MinX;
+            int y = MaxY - cellPos.y;
+
+            return !_collision[y, x] && (!checkObjects || _objects[y, x] == null);
         }
 
         public void RenderConsole()
