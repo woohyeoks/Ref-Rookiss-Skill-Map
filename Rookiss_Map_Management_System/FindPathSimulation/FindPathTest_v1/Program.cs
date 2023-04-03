@@ -19,6 +19,8 @@ namespace FindPathTest_v1
 
             Console.CursorVisible = false;
             int lastTick = System.Environment.TickCount;
+            gameRoom.HandleMove(gameRoom._myPlayer, new Vector2Int(-5, 0));
+
 
             while (true)
             {
@@ -30,6 +32,8 @@ namespace FindPathTest_v1
                 int deltaTick = currentTick - lastTick; // 경과된 틱..
                 lastTick = currentTick;
                 #endregion
+
+
                 // 로직!!
                 gameRoom.Update();
                 Console.SetCursorPosition(0, 0);

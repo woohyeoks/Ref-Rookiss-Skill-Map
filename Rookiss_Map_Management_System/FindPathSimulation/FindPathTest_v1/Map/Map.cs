@@ -29,9 +29,26 @@ namespace FindPathTest_v1
             return new Vector2Int(a.x - b.x, a.y - b.y);
         }
 
+        public static bool operator ==(Vector2Int a, Vector2Int b)
+        {
+            return (a.x == b.x && a.y == b.y) ? true : false;
+        }
+        public static bool operator !=(Vector2Int a, Vector2Int b)
+        {
+            return (a.x == b.x && a.y == b.y) ? false : true;
+        }
+
         public float magnitude { get { return (float)Math.Sqrt(sqrMagnitude); } }
         public int sqrMagnitude { get { return (x * x + y * y); } }
         public int cellDistFromZero { get { return Math.Abs(x) + Math.Abs(y); } } // 0,0 에서  우측으로 위로 몇번 갈수있는지..
+    }
+
+
+    public struct Pos
+    {
+        public Pos(int y, int x) { Y = y; X = x; }
+        public int Y;
+        public int X;
     }
 
     public class Map
@@ -102,9 +119,11 @@ namespace FindPathTest_v1
             if (gameObject.Room == null || gameObject.Room.Map != this)
                 return false;
 
-            int x = dest.x - MinX;
-            int y = MaxY - dest.y;
-            _objects[y, x] = gameObject;
+            {
+                int x = dest.x - MinX;
+                int y = MaxY - dest.y;
+                _objects[y, x] = gameObject;
+            }
 
             gameObject.Pos.x = dest.x;
             gameObject.Pos.y = dest.y;
@@ -123,6 +142,7 @@ namespace FindPathTest_v1
             return !_collision[y, x] && (!checkObjects || _objects[y, x] == null);
         }
 
+
         public void RenderConsole()
         {
             ConsoleColor prevColor = Console.ForegroundColor;
@@ -138,6 +158,11 @@ namespace FindPathTest_v1
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
                     }
+                    else if (_objects[y, x] != null)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                    }
+
                     else
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
@@ -149,5 +174,19 @@ namespace FindPathTest_v1
             }
             Console.ForegroundColor = prevColor;
         }
+
+
+        #region A* PathFinding
+        // U D L R
+        int[] _deltaY = new int[] { 1, -1, 0, 0 };
+        int[] _deltaX = new int[] { 0, 0, -1, 1 };
+        int[] _cost = new int[] { 10, 10, 10, 10 };
+
+        public List<Vector2Int> FindPath(Vector2Int startCellPos, Vector2Int destCellPos, bool checkObjects = true)
+        {
+            List<Pos>
+        }
+
+        #endregion
     }
 }

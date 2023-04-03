@@ -56,8 +56,7 @@ namespace FindPathTest_v1.Room
                 return;
             }
             player.State = State.PLAYER_MOVE;
-            Map.ApplyMove(_myPlayer, dest);
-           
+            player.TargetPos = dest;
         }
     }
 }
