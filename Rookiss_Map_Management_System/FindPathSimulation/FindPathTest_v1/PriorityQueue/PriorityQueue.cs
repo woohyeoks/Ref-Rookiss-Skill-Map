@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FindPathTest_v1.PriorityQueue
+namespace FindPathTest_v1
 {
     public class PriorityQueue<T> where T : IComparable<T>
     {
