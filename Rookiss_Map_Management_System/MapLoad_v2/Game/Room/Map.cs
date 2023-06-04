@@ -1,13 +1,15 @@
-﻿using System;
+﻿using MapLoad_v2.Game.Object;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace MapLoad_v2.Game.Room
 {
-    internal class Map
+    public class Map
     {
         public int MinX { get; set; }
         public int MaxX { get; set; }
@@ -46,5 +48,24 @@ namespace MapLoad_v2.Game.Room
 
             Console.WriteLine(result);
         }
+
+        public bool ApplyLeave(GameObject gameObject)
+        {
+            return true;
+        }
+
+        public bool ApplyMove(GameObject gameObject, Vector3 dest)
+        {
+            ApplyLeave(gameObject);
+
+
+            // 실제 좌표 이동!
+            gameObject.Pos.X = dest.X;
+            gameObject.Pos.Y = dest.Y;
+
+            return true;
+        }
+
+
     }
 }
