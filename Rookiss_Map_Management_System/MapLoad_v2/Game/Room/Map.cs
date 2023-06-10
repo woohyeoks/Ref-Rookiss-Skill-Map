@@ -9,6 +9,22 @@ using System.Xml.Linq;
 
 namespace MapLoad_v2.Game.Room
 {
+    public struct Vector2Int
+    {
+        public int x;
+        public int y;
+
+        public Vector2Int(int x, int y) { this.x = x; this.y = y; }
+    }
+    public struct Pos
+    {
+        public int Y;
+        public int X;
+
+        public Pos(int y, int x) { Y = y; X = x; }
+    }
+
+
     public class Map
     {
         public int MinX { get; set; }
@@ -66,6 +82,45 @@ namespace MapLoad_v2.Game.Room
             return true;
         }
 
+        #region A* PathFinding
+        // U D L R
+        int[] _deltaY = new int[] { 1, -1, 0, 0 };
+        int[] _deltaX = new int[] { 0, 0, -1, 1 };
+        int[] _cost = new int[] { 10, 10, 10, 10 };
 
+
+        Pos Cell2Pos(Vector2Int cell)
+        {
+            return new Pos(MaxY - cell.y, cell.x - MinX);
+        }
+
+        Vector2Int Pos2Cell(Pos pos)
+        {
+            return new Vector2Int(pos.X + MinX, MaxY - pos.Y);
+        }
+
+
+        public void DemoCell2Pos()
+        {
+            Vector2Int cell = new Vector2Int();
+
+            cell.x = MinX;
+            cell.y = MinY;
+            for (cell.x = MinX; cell.x< MaxX; cell.x++)
+            {
+                for (cell.y = MinY; cell.y < MaxY; cell.y++)
+                {
+                    Pos pos = Cell2Pos(cell);
+                    Console.WriteLine($"Cell2Pos cell({cell.x}, {cell.y}) pos({pos.X}, {pos.Y})");
+                }
+            }
+        }
+
+        public void DemoPos2Cell()
+        {
+            Pos pos = new Pos();
+        }
+
+        #endregion
     }
 }
